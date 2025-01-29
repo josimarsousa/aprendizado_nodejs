@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
             })
     }else{
 
-            const nameNewLine = name + '\r\n'
+            const nameNewLine = name + ',\r\n'
 
             fs.appendFile("arquivo.txt", nameNewLine, function (err, data){
                 res.writeHead(302, {
