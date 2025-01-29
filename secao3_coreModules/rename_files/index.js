@@ -10,5 +10,5 @@ fs.rename(arqAntigo, arqNovo, function (err) {
         return
     }
 
-    console.log('Arquivo renomeado!')
+    console.log(`O arquivo ${arqAntigo} foi renomeado para ${arqNovo}`)
 })
