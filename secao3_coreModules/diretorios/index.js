@@ -5,6 +5,6 @@ if(!fs.existsSync('./minhapasta')){
     fs.mkdirSync('minhapasta')
     console.log('pasta criada agora')
 }else if(fs.existsSync('./minhapasta')){
-    console.log('Existe!')
+    console.log('direotorio existente!')
 }
 
