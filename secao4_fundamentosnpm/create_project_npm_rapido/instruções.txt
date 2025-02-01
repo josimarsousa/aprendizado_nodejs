@@ -1,0 +1,1 @@
+iniciando um projeto bem rapido: npm init -y
