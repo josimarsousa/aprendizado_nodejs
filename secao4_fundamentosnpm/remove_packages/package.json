@@ -1,0 +1,15 @@
+{
+  "name": "dependencias_dev",
+  "version": "1.0.0",
+  "description": "estudando dependencias",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "josimar",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^4.1.2"
+  }
+}
