@@ -1,8 +1,23 @@
 // modulos externos
-const inquirer = require('inquirer')
-const chalk = require('chalk')
+import inquirer from 'inquirer'
 
-// modulos internos
-const fs = require('fs')
 
-console.log("Iniciamos o Accounts")
+Operation()
+
+function Operation(){
+    inquirer
+        .prompt([{
+            type:'list',
+            name: 'action',
+            message: 'O que você deseja? ',
+            choices: [
+                'Criar conta', 
+                'Consultar Saldo',
+                'Depositar',
+                'Sacar',
+                'Sair'
+        ],
+      },
+    ]).then().catch((err) => console.log(err))
+}
+
