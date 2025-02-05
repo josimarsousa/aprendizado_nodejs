@@ -1,0 +1,16 @@
+{
+  "name": "project_accounts",
+  "version": "1.0.0",
+  "description": "simulador de contas bancarias",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "accounts.js"
+  },
+  "author": "josimar",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "inquirer": "^12.4.1"
+  }
+}
