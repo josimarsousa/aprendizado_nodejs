@@ -18,6 +18,10 @@ function Operation(){
                 'Sair'
         ],
       },
-    ]).then().catch((err) => console.log(err))
+    ]).then((anwser) => {
+        const action = anwser['action']
+        console.log(action)
+    })
+    .catch((err) => console.log(err))
 }
 
