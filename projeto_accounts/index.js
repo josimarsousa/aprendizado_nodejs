@@ -24,7 +24,17 @@ function Operation(){
         const action = anwser['action']
         if(action === 'Criar conta'){
             createAccount()
+        }else if(action === 'Depositar'){
+
+        }else if(action === 'Consultar Saldo'){
+
+        }else if(action === 'Sacar'){
+
+        }else if(action === 'Sair'){
+            console.log(chalk.bgBlue.blackBright('Obrigado por usar o accounts!'))
+            process.exit()
         }
+        
     })
     .catch((err) => console.log(err))
 }
