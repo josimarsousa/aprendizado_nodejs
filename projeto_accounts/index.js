@@ -25,7 +25,7 @@ function Operation(){
         if(action === 'Criar conta'){
             createAccount()
         }else if(action === 'Depositar'){
-
+            Deposit()
         }else if(action === 'Consultar Saldo'){
 
         }else if(action === 'Sacar'){
@@ -61,11 +61,8 @@ function buildAccount(){
 
         const accountName = anwser['accountName']
 
-        console.info(accountName)
-
         if(!fs.existsSync('accounts')){
-            fs.mkdirSync('accounts')
-            
+            fs.mkdirSync('accounts')   
         }
 
         if(fs.existsSync(`accounts/${accountName}.json`)){
@@ -85,4 +82,36 @@ function buildAccount(){
         Operation()
     })
     .catch((err) => console.log(err))
+}
+
+// add an amount to user account
+function Deposit(){
+
+    inquirer.prompt([
+        {
+            name: 'accountName',
+            message: 'Qual o nome da sua conta?'
+        },
+    ])
+    .then((anwser) => {
+        const accountName = anwser['accountName']
+
+        //verify if account exists
+        if(!checkAccount(accountName)){
+            return Deposit()
+        }
+
+    })
+    .catch(err => console.log(err))
+}
+
+//verify an account exists
+function checkAccount(accountName){
+    
+    if(!fs.existsSync(`accounts/${accountName}.json`)){
+        console.log(chalk.bgRed.black('Esta consta não existe, escolha outra conta!'))
+        return false
+    }
+
+    return true
 }
