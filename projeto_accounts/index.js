@@ -2,6 +2,7 @@
 import chalk from 'chalk'
 import inquirer from 'inquirer'
 import fs from 'fs'
+import { error } from 'console'
 
 
 Operation()
@@ -29,7 +30,7 @@ function Operation(){
         }else if(action === 'Consultar Saldo'){
             getAccountBalance()
         }else if(action === 'Sacar'){
-
+            withDraw()
         }else if(action === 'Sair'){
             console.log(chalk.bgBlue.blackBright('Obrigado por usar o accounts!'))
             process.exit()
@@ -176,4 +177,64 @@ function getAccountBalance(){
         Operation()
 
     }).catch((err) => console.log(err))
+}
+
+function withDraw(){
+    inquirer.prompt([
+        {
+            name: 'accountName',
+            message: 'Qual o nome da sua conta?'
+        }
+    ]).then((anwser) => {
+        const accountName = anwser['accountName']
+
+        if(!checkAccount(accountName)){
+            return withDraw()
+        }
+
+        inquirer.prompt([
+            {
+                name: 'amount', 
+                message: 'Quanto você deseja sacar?'
+            }
+        ]).then((anwser) => {
+
+            const amount = anwser['amount']
+
+            removeAmount(accountName, amount)
+        
+
+        }).catch((error) => console.log(err))
+
+
+    }).catch((err) => console.log(err))
+}
+
+function removeAmount(accountName, amount){
+
+    const accountData = getAccount(accountName)
+
+    if(!amount){
+        console.log(chalk.bgRed.black('Ocorreu um erro, tente novamente mais tarde!')
+    
+        )
+
+        return withDraw()
+    }
+
+    if(accountData.balance < amount){
+        console.log(chalk.bgRed.black('Valor indisponível!'))
+        return withDraw()
+    }
+
+    accountData.balance = parseFloat(accountData.balance) - parseFloat(amount)
+    fs.writeFileSync(
+        `accounts/${accountName}.json`,
+        JSON.stringify(accountData),
+        function (err){
+            console.log(err)
+        }
+    )
+    console.log(chalk.green(`Foi realizado um saque de R$${amount} na sua conta`))
+    Operation()
 }
