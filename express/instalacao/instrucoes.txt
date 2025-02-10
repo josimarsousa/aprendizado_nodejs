@@ -1,0 +1,2 @@
+#inicia-se o projeto com NPM INIT
+#seguindo com a instalaçao do express com NPM INSTALL EXPRESS
