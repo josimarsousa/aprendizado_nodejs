@@ -3,10 +3,10 @@ const app = express()
 const port = 3001
 
 const path = require('path')
-const basePaht = 
+const basePath = path.join(__dirname, 'templates')
 
 app.get('/', (req, res) => {
-    res.send('Olá mundo!')
+    res.sendFile(`${basePath}/index.html`)
 })
 
 app.listen(port, () => {
