@@ -7,12 +7,15 @@
 </head>
 <body>
     <h1>Adicionar Usuário</h1>
-    <forma action="/users/add" method="POST">
+    <form action="/users/save" method="POST">
         <div>
-            <input type="text" name="name" placeholder="Digite um nome">
+            <input type="text" name="name" placeholder="Digite um nome"/>
         </div>
         <div>
-            <input type="text" name="age" placeholder="Digite a idade">
+            <input type="text" name="age" placeholder="Digite a idade"/>
+        </div>
+        <div>
+            <input type="submit" value="Cadastrar"/>
         </div>
     </form>
 </body>
