@@ -1,9 +1,9 @@
 const express = require('express') 
-const expressHandlebars = require("express-handlebars") 
+const exphbs= require("express-handlebars") 
 
 const app = express()
 
-app.engine('handlebars', expressHandlebars())
+app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
 app.get('/', (req, res) => {
