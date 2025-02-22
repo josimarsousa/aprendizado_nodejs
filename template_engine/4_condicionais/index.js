@@ -19,7 +19,9 @@ app.get('/', (req, res) => {
     }
 
     const palavra = "Pagina de testes"
-
+    //verificacao de autenticacao
+    // se condicao for falsa
+    //if const auth = false nao aparece link para navegacao
     const auth = true
 
     res.render('home', {user: user, palavra, auth})
