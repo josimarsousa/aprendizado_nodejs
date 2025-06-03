@@ -3,7 +3,9 @@
     <a href="/">Adicionar nomo livro</a>
     {{#each books}}
     <div>
-        #{{this.idbooks}} - <span class="bold">{{this.bookName}}</span> - {{this.pages}} páginas
+        #{{this.idbooks}} - 
+        <span class="bold"><a href="/books/{{this.idbooks}}">{{this.bookName}}</a></span>
+         - {{this.pages}} páginas
     </div>
     {{/each}}
 </div>
