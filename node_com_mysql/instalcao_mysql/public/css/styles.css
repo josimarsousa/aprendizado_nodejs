@@ -28,8 +28,27 @@
 }
 
 h1{
+    margin: 3em;
     text-align: center;
-    
+    font-size: 1.5em;
+}
+
+.inputCadBook {
+    width: 33em;
+    height: 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: white;  
+    margin-bottom: 25px;
+}
+
+.inputCadBookTitulo{
+    width: 33em;
+    height: 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 15px;
 }
 
 .form, .books-container{
