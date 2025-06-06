@@ -54,9 +54,10 @@ app.get('/books/:id', (req, res) => {
 
     const id = req.params.id
 
-    const sql = `SELECT * FROM books WHERE idbooks = ${id}`
+    const sql = `SELECT * FROM books WHERE ?? = ?`
+    const data = ['idbooks', id]
 
-    pool.query(sql, function(err, data) {
+    pool.query(sql, data, function(err, data) {
         if(err) {
             console.log(err)
             return
@@ -72,9 +73,10 @@ app.get('/books/edit/:id', (req, res) => {
 
     const id = req.params.id
 
-    const sql = `SELECT * FROM books WHERE idbooks = ${id}`
+    const sql = `SELECT * FROM books WHERE ?? = ?`
+    const data = ['idbooks', id]
 
-    pool.query(sql, function(err, data){
+    pool.query(sql, data, function(err, data){
         if(err) {
             console.log(err)
             return
@@ -91,9 +93,10 @@ app.post('/books/updatebook', (req, res) => {
     const title = req.body.title
     const pageqty = req.body.pageqty
 
-    const sql = `UPDATE books SET bookName = '${title}', pages = '${pageqty}' WHERE idbooks = ${id}`
+    const sql = `UPDATE books SET ?? = ?, ?? = ? WHERE ?? = ?`
+    const data = ['bookName', title, 'pages', pageqty, 'idbooks', id]
 
-    pool.query(sql, function(err) {
+    pool.query(sql, data, function(err) {
         if(err){
             console.log(err)
             return
@@ -107,9 +110,10 @@ app.post('/books/delete/:id', (req, res) =>{
 
     const id = req.params.id
 
-    const sql = `DELETE FROM books WHERE idbooks = ${id}`
+    const sql = `DELETE FROM books WHERE ?? = ?`
+    const data = ['idbooks', id]
 
-    pool.query(sql, function(err){
+    pool.query(sql, data, function(err){
         if(err){
             console.log(err)
             return
