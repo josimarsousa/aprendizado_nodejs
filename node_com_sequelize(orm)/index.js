@@ -12,17 +12,27 @@ app.use(
     })
 )
 
-app.use(express.json)
+app.use(express.json())
 
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
 
+app.get('/users/create', (req, res) => {
+    res.render('addUser')
+})
+
 app.get('/', (req, res) => {
     res.render('home')
 })
 
-conn.sync().then(() => {
-    app.listen(3000)
-}).catch((err) => console.log(err))
+conn
+    .sync().then(() => {
+    app.listen(3000, () => {
+        console.log('Servidor rodando em http://localhost:3000')
+    })
+})
+.catch((err) => {
+    console.log('Erro ao conectar ao banco de dados',err)
+})

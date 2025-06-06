@@ -33,25 +33,7 @@ h1{
     font-size: 1.5em;
 }
 
-.inputCadBook {
-    width: 33em;
-    height: 2em;
-    border: none;
-    border-radius: 5px;
-    background-color: white;  
-    margin-bottom: 25px;
-}
-
-.inputCadBookTitulo{
-    width: 33em;
-    height: 2em;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    margin-bottom: 15px;
-}
-
-.form, .books-container{
+form{
     width: 450px;
     margin: 0 auto;
 }
@@ -71,42 +53,12 @@ h1{
     padding: 5px;
 }
 
-/*books*/
-.books-container div{
-    border-bottom: 1px solid #CCC;
-    padding: 5px;
-    margin: 5px;
-    margin-top: 15px;
-
+.form-checkbox{
+    flex-direction: row;
 }
 
-.buttonCadHome{
-    width: 7em;
-    height: 2.5em;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(55, 148, 215);
-    color: white;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.livros-cad{
-    margin-top: 5rem;
-    
-}
-
-/*book */
-
-#book-page{
-    padding: 2em;
-}
-
-#book-page .container{
-    text-align: center;
+.form-checkbox input{
+    margin-right: 5px;
 }
 
 .actions{
@@ -118,3 +70,4 @@ h1{
 .actions a{
     margin-right: 1em;
 }
+
