@@ -23,6 +23,17 @@ app.get('/users/create', (req, res) => {
     res.render('addUser')
 })
 
+app.post('/users/create', (req, res) => {
+    const name = req.body.name
+    const occupation = req.body.occupation
+    let newsletter = req.body.newsletter
+
+    if(newsletter === 'on') {
+        newsletter = true
+    }
+
+    })
+
 app.get('/', (req, res) => {
     res.render('home')
 })
