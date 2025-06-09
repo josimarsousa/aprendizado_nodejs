@@ -80,3 +80,13 @@ form{
     gap: 10px;
 }
 
+.container .item{
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 20px;
+    flex:  1 1 29%;
+    max-width: 29%;
+    height: 75px;
+    
+}
+
