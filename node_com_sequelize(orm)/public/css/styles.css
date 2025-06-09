@@ -90,3 +90,11 @@ form{
     
 }
 
+.item h2, .item p {
+    margin-bottom: 0.8em;
+}
+
+.action{
+    display: flex;
+}
+
