@@ -48,6 +48,14 @@ app.get('/', async (req, res) => {
     res.render('home', {users: users})
 })
 
+app.get('/users/:id', async (req, res) => {
+    const id = req.params.id
+
+    const user = await User.findOne({ raw: true, where: { id: id }})
+
+    res.render('userview', { user })
+})
+
 conn
     .sync().then(() => {
     app.listen(3000, () => {
