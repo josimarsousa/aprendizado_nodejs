@@ -41,9 +41,11 @@ app.post('/users/create', async (req, res) => {
 
 app.get('/', async (req, res) => {
 
-    User.findAll({raw: true})
+    const users = await User.findAll({raw: true})
 
-    res.render('home')
+    console.log(users)
+
+    res.render('home', {users: users})
 })
 
 conn
