@@ -97,11 +97,14 @@ form{
     margin-bottom: 0.8em;
 }
 
-.action{
+.actions{
     display: flex;
+    justify-content: space-between;
 }
 
-.actions a input{
+.actions a,
+.actions input{
+    
     border: 1px solid #BBB;
     border-radius: 5px;
     text-decoration: none;
