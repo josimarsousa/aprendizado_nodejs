@@ -74,6 +74,31 @@ app.get('/users/edit/:id', async (req, res) => {
     res.render('useredit', {user})
 })
 
+app.post('/users/update', async (req, res) => {
+
+    const id = req.body.id
+    const name = req.body.name
+    const occupation = req.body.occupation
+    let newsletter = req.body.newsletter
+
+    if(newsletter === 'on'){
+        newsletter = true
+    }else{
+        newsletter = false
+    }
+
+    const userData = {
+        id, 
+        name,
+        occupation,
+        newsletter
+    }
+
+    await User.update(userData, { where: { id: id}})
+
+    res.redirect('/')
+})
+
 conn
     .sync().then(() => {
     app.listen(3000, () => {
