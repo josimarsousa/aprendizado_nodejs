@@ -6,8 +6,18 @@ const User = require('./User')
 
 const Address = db.define('Address', {
 
-
-
+    street: {
+        type: DataTypes.STRING,
+        required: true,
+    },
+    number: {
+        type: DataType.STRING,
+        required: true,
+    },
+    city: {
+        type: DataTypes.STRING,
+        required: true,
+    }
 })
 
 module.exports = Address
