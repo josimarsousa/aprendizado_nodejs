@@ -100,8 +100,8 @@ app.post('/users/update', async (req, res) => {
 })
 
 conn
-    .sync()
-    //.sync({force: true})
+    //.sync()
+    .sync({force: true})
     .then(() => {
     app.listen(3000, () => {
         console.log('Servidor rodando em http://localhost:3000')
