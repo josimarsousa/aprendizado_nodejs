@@ -3,6 +3,7 @@ const { engine } = require('express-handlebars')
 const conn = require('./connection/db/conn.js')
 
 const User = require('./Models/User.js')
+const Address = require('./Models/Address.js')
 
 const app = express()
 

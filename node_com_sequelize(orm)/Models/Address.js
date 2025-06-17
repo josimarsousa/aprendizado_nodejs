@@ -11,7 +11,7 @@ const Address = db.define('Address', {
         required: true,
     },
     number: {
-        type: DataType.STRING,
+        type: DataTypes.STRING,
         required: true,
     },
     city: {
