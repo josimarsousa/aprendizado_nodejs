@@ -128,3 +128,21 @@ form{
 
 }
 
+/* Address*/
+
+.address-container{
+    max-width: 1000px;
+    margin: 1em auto;
+    padding-top: 1em;
+    border-top: 1px solid #CCC
+}
+
+
+.address-container h2{
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.address-container form{
+    width: 300px;
+}
