@@ -116,6 +116,8 @@ app.post('/address/create', async (req, res) => {
 
    await Address.create(address)
 
+   res.redirect(`/users/edit/${UserId}`)
+
 })
 
 conn
