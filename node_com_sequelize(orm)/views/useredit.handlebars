@@ -37,4 +37,9 @@
         </div>
         <input type="submit" value="Incluir endereço">
     </form>
+    <div class="address-list">
+        {{#each user.Addresses}}
+            <p>#{{this.id}} - {{this.street}} - {{this.number}} - {{this.city}}</p>
+        {{/each}}
+    </div>
 </div>
