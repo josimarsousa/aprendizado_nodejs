@@ -70,9 +70,9 @@ app.get('/users/edit/:id', async (req, res) => {
 
     const id = req.params.id
 
-    const user = await User.findOne({raw: true, where: {id: id}})
+    const user = await User.findOne({include: Address, where: {id: id}})
 
-    res.render('useredit', {user})
+    res.render('useredit', {user: user.get({plain: true})})
 })
 
 app.post('/users/update', async (req, res) => {
