@@ -154,3 +154,10 @@ form{
     border-top: 1px solid #CCC;
     align-items: center;
 }
+
+.address-list div{
+    display: flex;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+}
