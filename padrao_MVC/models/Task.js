@@ -1,9 +1,20 @@
-const { DataTypes} = require('sequelize')
+const { DataTypes } = require('sequelize')
 
 const db = require('../db/conn')
 
-const task = db.define('Task', {
+const Task = db.define('Task', {
     title: {
-        
+        type: DataTypes.STRING,
+        requerid: true
+    },
+    description: {
+        type: DataTypes.STRING,
+        required: true
+    },
+    done: {
+        type: DataTypes.BOOLEAN,
+        required: true
     }
 })
+
+module.exports = Task
