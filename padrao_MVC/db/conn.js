@@ -14,4 +14,4 @@ try {
     console.log('Não foi possível conectar ao banco de dados node_mvc!')
 }
 
-exports.default = sequelize
+module.exports = sequelize

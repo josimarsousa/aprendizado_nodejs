@@ -18,5 +18,9 @@ app.use(
 
 app.use(express.json())
 app.use(express.static('public'))
+conn
+    .sync()
+    .then()
+    .catch((err) => console.log(err) )
 
 app.listen(3000)
