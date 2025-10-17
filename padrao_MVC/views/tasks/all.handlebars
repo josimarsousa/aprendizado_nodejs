@@ -1,1 +1,7 @@
-<h1>Todas as tasks</h1>
+{{!< main}}
+<h1>Todas as Tarefas</h1>
+<ul>
+  {{#each tasks}}
+    <li>{{this.name}}</li>
+  {{/each}}
+</ul>
