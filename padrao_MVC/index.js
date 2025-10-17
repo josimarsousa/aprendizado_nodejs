@@ -1,5 +1,6 @@
 const express = require('express')
 const { engine } = require('express-handlebars')
+const path = require('path')
 
 const app = express()
 const conn = require('./db/conn')
@@ -16,6 +17,12 @@ app.use(
         extended: true
     })
 )
+
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.js'))
+})
 
 app.use(express.json())
 app.use(express.static('public'))
