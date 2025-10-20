@@ -15,6 +15,8 @@ module.exports = class TaskController {
 
         await Task.afterSave(task)
 
+        res.redirect('/tasks')
+
     }
 
     static showTasks(req, res){
