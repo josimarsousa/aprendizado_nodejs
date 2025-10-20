@@ -13,7 +13,7 @@ module.exports = class TaskController {
             done: false
         }
 
-        await Task.afterSave(task)
+        await Task.create(task)
 
         res.redirect('/tasks')
 
