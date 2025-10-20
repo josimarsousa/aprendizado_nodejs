@@ -5,6 +5,18 @@ module.exports = class TaskController {
         res.render('tasks/add')
     }
 
+    static async createTaskSave(req, res){
+
+        const task = {
+            title: req.body.title,
+            description: req.body.description,
+            done: false
+        }
+
+        await Task.afterSave(task)
+
+    }
+
     static showTasks(req, res){
         res.render('tasks/all')
     }
