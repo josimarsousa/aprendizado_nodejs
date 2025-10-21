@@ -15,7 +15,7 @@ module.exports = class TaskController {
 
         await Task.create(task)
 
-        res.redirect('/tasks')
+        res.redirect('/tasks/all')
 
     }
 
