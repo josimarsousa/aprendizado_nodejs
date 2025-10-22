@@ -1,2 +1,9 @@
 
 <h1>Todas as Tarefas</h1>
+<ul class="task-list">
+    {{#each tasks}}
+        <li>
+            <a href="/" class="title">{{this.title}}</a>
+        </li>
+    {{/each}}
+</ul>
