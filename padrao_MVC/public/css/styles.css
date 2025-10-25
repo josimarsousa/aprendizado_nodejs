@@ -9,7 +9,7 @@
     border-bottom: 1px solid #CCC;
     padding: 0.5em;
     margin-bottom: 1em;
-    background-color: #db4c3f;
+    background-color: #6d8817;
     color: #FFF;
     display: flex;
     justify-content: space-between;
@@ -38,6 +38,11 @@
     background-color: rgb(77, 154, 217);
 }
 
+h1{
+    font-size: 2em;
+    color: #518e5f;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+}
 
 form{
     width: 450px;
@@ -93,4 +98,30 @@ form input[type="submit"]{
     border-bottom: 1px solid #efefef;
     display: flex;
     justify-content: space-between;
+}
+
+.task-list .title{
+    
+    color: #777474;
+    transition: 0.5s;
+    font-size: 1em;
+}
+
+.task-list .title:hover{
+    color: #427c0f;
+}
+
+.actions{
+    display: flex;
+}
+
+.actions i {
+    font-size: 1.5em;
+    margin-right: 0.6em;
+    color: #427c0f;
+}
+
+.actions i:hover{ 
+    
+    color: #dd6e64;
 }
