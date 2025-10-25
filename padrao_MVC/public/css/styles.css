@@ -80,3 +80,17 @@ form input[type="submit"]{
 .container form{
     margin-top: 1.5em;
 }
+
+.task-list{
+    margin-top: 3em;
+    list-style: none;
+    margin-bottom: 1em;
+}
+
+.task-list li {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #efefef;
+    display: flex;
+    justify-content: space-between;
+}
