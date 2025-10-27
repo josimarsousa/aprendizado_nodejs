@@ -7,7 +7,7 @@
 
 #navbar{
     border-bottom: 1px solid #CCC;
-    padding: 0.5em;
+    padding: 1em 2em;
     margin-bottom: 1em;
     background-color: #6d8817;
     color: #FFF;
@@ -86,25 +86,33 @@ form input[type="submit"]{
     margin-top: 1.5em;
 }
 
+.title {
+    white-space: nowrap;
+
+}
+
+
 .task-list{
     margin-top: 3em;
     list-style: none;
-    margin-bottom: 1em;
+
 }
 
 .task-list li {
-    padding: 0.5em;
+    padding: .5em;
     margin-bottom: 1em;
     border-bottom: 1px solid #efefef;
     display: flex;
     justify-content: space-between;
+    gap: 1em;
 }
 
 .task-list .title{
-    
+    margin-right: 7em;
     color: #777474;
     transition: 0.5s;
     font-size: 1em;
+   
 }
 
 .task-list .title:hover{
@@ -113,15 +121,29 @@ form input[type="submit"]{
 
 .actions{
     display: flex;
+    
 }
 
 .actions i {
     font-size: 1.5em;
-    margin-right: 0.6em;
+    margin-right: 1em;
     color: #427c0f;
+    justify-content: space-between;
+    
 }
 
 .actions i:hover{ 
     
     color: #dd6e64;
+}
+
+.actions form{
+   margin: 0;
+}
+
+.actions button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
 }
