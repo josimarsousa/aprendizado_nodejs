@@ -9,7 +9,7 @@ router.post('/add', TaskController.createTaskSave)
 router.post('/remove', TaskController.removeTask)
 router.get('/edit/:id', TaskController.updateTask)
 router.post('/edit', TaskController.updateTaskPost)
-router.post('/updateDone', TaskController.toggleTaskDone)
+router.post('/updatestatus', TaskController.toggleTaskStatus)
 router.get('/all', TaskController.showTasks)
 
 

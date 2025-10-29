@@ -44,15 +44,11 @@ h1{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
 }
 
-form{
-    width: 450px;
-    margin: 0 auto;
-}
 
 .form-control{
     display: flex;
     flex-direction: column;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
 }
 
 .form-control label{
@@ -91,6 +87,11 @@ form input[type="submit"]{
 
 }
 
+.title.done{
+    text-decoration: line-through;
+    color: #ccc;
+}
+
 
 .task-list{
     margin-top: 3em;
@@ -104,7 +105,6 @@ form input[type="submit"]{
     border-bottom: 1px solid #efefef;
     display: flex;
     justify-content: space-between;
-    gap: 1em;
 }
 
 .task-list .title{
@@ -128,8 +128,6 @@ form input[type="submit"]{
     font-size: 1.5em;
     margin-right: 1em;
     color: #427c0f;
-    justify-content: space-between;
-    
 }
 
 .actions i:hover{ 
@@ -147,3 +145,4 @@ form input[type="submit"]{
     cursor: pointer;
     
 }
+
