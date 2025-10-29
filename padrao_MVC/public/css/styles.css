@@ -82,15 +82,7 @@ form input[type="submit"]{
     margin-top: 1.5em;
 }
 
-.title {
-    white-space: nowrap;
 
-}
-
-.title.done{
-    text-decoration: line-through;
-    color: #ccc;
-}
 
 
 .task-list{
@@ -109,10 +101,15 @@ form input[type="submit"]{
 
 .task-list .title{
     margin-right: 7em;
-    color: #777474;
+    color: #e32323;
     transition: 0.5s;
     font-size: 1em;
    
+}
+
+.title.done{
+    text-decoration: line-through;
+    color: #7e8183;
 }
 
 .task-list .title:hover{
