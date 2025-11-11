@@ -3,6 +3,7 @@ const { DataTypes } = require('sequelize')
 const db =  require('../db/conn')
 
 //User
+const User = require('./User')
 
 const Tought = db.define('Tought', {
     title: {
@@ -11,5 +12,9 @@ const Tought = db.define('Tought', {
         require: true
     }
 })
+
+Tought.belongsTo(User)
+User.hasMany(Tought)
+
 
 module.exports = Tought

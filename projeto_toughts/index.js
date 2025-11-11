@@ -1,5 +1,5 @@
 const express = require('express')
-const exphbs = require('express-handlebars')
+const { engine } = require('express-handlebars')
 const session = require('express-session')
 const FileStore = require('session-file-store')(session)
 const flash = require('express-flash')
@@ -8,8 +8,11 @@ const app = express()
 
 const conn = require('./db/conn')
 
+const Tought = require('./models/Tought')
+const User = require('./models/User')
+
 //template engine
-app.engine('handlebars', exphbs())
+app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 
 //receber resposta do body
@@ -28,8 +31,8 @@ app.use(
         secret: "nosso_secret",
         resave: false,
         saveUninitialized: false,
-        store: new FileStore()({
-            lofFn: function(){},
+        store: new FileStore({
+            logFn: function(){},
             path: require('path').join(require('os').tmpdir(), 'sessions'),
         }),
         cookie: {
