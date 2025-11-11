@@ -8,6 +8,41 @@ const app = express()
 
 const conn = require('./db/conn')
 
+//template engine
+app.engine('handlebars', exphbs())
+app.set('view engine', 'handlebars')
+
+//receber resposta do body
+app.use(
+    express.urlencoded({
+        extended: true
+    })
+)
+
+app.use(express.json())
+
+//session midleware
+app.use(
+    session({
+        name: "session",
+        secret: "nosso_secret",
+        resave: false,
+        saveUninitialized: false,
+        store: new FileStore()({
+            lofFn: function(){},
+            path: require('path').join(require('os').tmpdir(), 'sessions'),
+        }),
+        cookie: {
+            secure: false,
+            maxAge: 360000,
+            expires: new Date(Date.now() + 360000),
+            httpOnly: true
+        }
+    }),
+)
+
+
+
 conn    
     .sync()
     .then(() => {
